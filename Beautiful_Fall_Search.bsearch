@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<!DOCTYPE search SYSTEM "behaviorsearch.dtd">
+<search>
+    <bsearchVersionNumber>1.10</bsearchVersionNumber>
+    <modelInfo>
+        <modelFile>C:\Users\Sisyphus\Downloads\CSIM LB 3\Autumn_updated_v3.nlogox</modelFile>
+        <modelSetupCommands>setup</modelSetupCommands>
+        <modelStepCommands>go</modelStepCommands>
+        <modelStopCondition/>
+        <modelStepLimit>200</modelStepLimit>
+        <modelMetricReporter>count attached-leaves with [shade-of? color red]</modelMetricReporter>
+        <modelMeasureIf>true</modelMeasureIf>
+    </modelInfo>
+    <fitnessInfo>
+        <fitnessMinimized>false</fitnessMinimized>
+        <fitnessCollecting>MEAN_ACROSS_STEPS</fitnessCollecting>
+        <fitnessSamplingReplications>10</fitnessSamplingReplications>
+        <fitnessCombineReplications>MEAN</fitnessCombineReplications>
+    </fitnessInfo>
+    <searchSpace>
+        <paramSpec>["number-of-leaves" 500]</paramSpec>
+        <paramSpec>["start-sugar-mean" 50]</paramSpec>
+        <paramSpec>["start-sugar-stddev" 25]</paramSpec>
+        <paramSpec>["leaf-display-mode" "solid"]</paramSpec>
+        <paramSpec>["average-temperature" [0 1 40]]</paramSpec>
+        <paramSpec>["max-sun-intensity" [0 1 100]]</paramSpec>
+        <paramSpec>["wind-factor" [0 1 10]]</paramSpec>
+        <paramSpec>["rain-intensity" [0 1 30]]</paramSpec>
+        <paramSpec>["rain-probability" [0 1 100]]</paramSpec>
+    </searchSpace>
+    <searchMethod type="StandardGA">
+        <searchMethodParameter name="mutation-rate" value="0.01"/>
+        <searchMethodParameter name="population-size" value="50"/>
+        <searchMethodParameter name="tournament-size" value="3"/>
+        <searchMethodParameter name="population-model" value="generational"/>
+        <searchMethodParameter name="crossover-rate" value="0.7"/>
+    </searchMethod>
+    <chromosomeRepresentation type="GrayBinaryChromosome"/>
+    <caching>true</caching>
+    <evaluationLimit>5000</evaluationLimit>
+    <bestCheckingNumReplications>10</bestCheckingNumReplications>
+</search>
